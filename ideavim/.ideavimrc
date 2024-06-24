@@ -24,7 +24,7 @@ nmap n nzzzv
 nmap N Nzzzv
 
 vmap K :m '<-2<CR>gv=gv
-vmap J :m '<+1<CR>gv=gv
+vmap J :m '>+1<CR>gv=gv
 
 xmap <leader>p \"_dP
 
