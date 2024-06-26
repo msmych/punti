@@ -12,7 +12,7 @@ return {
       local dapui = require 'dapui'
 
       require('mason-nvim-dap').setup {
-        automatic_setup = true,
+        automatic_installation = true,
         ensure_installed = {
           'codelldb',
         },
@@ -23,26 +23,7 @@ return {
       vim.keymap.set('n', '<F8>', dap.step_over, { desc = 'Debug: step over' })
       vim.keymap.set('n', '<leader><F8>', dap.toggle_breakpoint, { desc = 'Debug: toggle breakpoint' })
 
-      dapui.setup {
-        -- icons = {
-        --   expanded = '▾',
-        --   collapsed = '▸',
-        --   current_frame = '*'
-        -- },
-        -- controls = {
-        --   icons = {
-        --     pause = '⏸',
-        --     play = '▶',
-        --     step_into = '⏎',
-        --     step_over = '⏭',
-        --     step_out = '⏮',
-        --     step_back = 'b',
-        --     run_last = '▶▶',
-        --     terminate = '⏹',
-        --     disconnect = '⏏',
-        --   },
-        -- },
-      }
+      dapui.setup {}
 
       vim.keymap.set('n', '<leader>5', dapui.toggle, { desc = 'Toggle debug' })
 
@@ -50,5 +31,5 @@ return {
       dap.listeners.before.event_terminated['dapui_config'] = dapui.close
       dap.listeners.before.event_exited['dapui_config'] = dapui.close
     end,
-  }
+  },
 }

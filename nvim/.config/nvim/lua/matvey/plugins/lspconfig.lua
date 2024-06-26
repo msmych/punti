@@ -2,16 +2,16 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      'williamboman/mason.nvim',
+      { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       { 'j-hui/fidget.nvim', opts = {} },
 
-      'folke/neodev.nvim',
+      { 'folke/neodev.nvim', opts = {} },
     },
     config = function()
-      local mason = require('mason')
+      local mason = require 'mason'
       mason.setup()
 
       require('neodev').setup()
@@ -20,6 +20,9 @@ return {
         lua_ls = {
           Lua = {
             runtime = { version = 'LuaJIT' },
+            completion = {
+              callSnippet = 'Replace',
+            },
             workspace = {
               checkThirdParty = false,
               library = {
@@ -29,7 +32,7 @@ return {
             },
             telemetry = { enable = false },
             diagnostics = { disable = { 'missing-fields' } },
-          }
+          },
         },
         eslint = {},
         tsserver = {},
@@ -49,20 +52,21 @@ return {
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       require('mason-lspconfig').setup {
-        handlers = { function(server_name)
-          local server = servers[server_name] or {}
-          require('lspconfig')[server_name].setup {
-            cmp = server.cmd,
-            settings = servers[server_name],
-            capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {}),
-            filetypes = server.filetypes,
-            on_attach = function(client, bufnr)
-              require('matvey.utils').setup_lsp(client, bufnr)
-            end,
-          }
-        end
-        }
+        handlers = {
+          function(server_name)
+            local server = servers[server_name] or {}
+            require('lspconfig')[server_name].setup {
+              cmp = server.cmd,
+              settings = servers[server_name],
+              capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {}),
+              filetypes = server.filetypes,
+              on_attach = function(client, bufnr)
+                require('matvey.utils').setup_lsp(client, bufnr)
+              end,
+            }
+          end,
+        },
       }
     end,
-  }
+  },
 }
