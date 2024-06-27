@@ -12,8 +12,29 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup {
-  { import = 'matvey.plugins' },
+require('lazy').setup(
+  {
+    { import = 'matvey.plugins' },
 
-  'mbbill/undotree',
-}
+    'mbbill/undotree',
+  },
+  {
+    ui = {
+      icons = vim.g.have_nerd_font and {} or {
+        cmd = '⌘',
+        config = '🛠',
+        event = '📅',
+        ft = '📂',
+        init = '⚙',
+        keys = '🗝',
+        plugin = '🔌',
+        runtime = '💻',
+        require = '🌙',
+        source = '📄',
+        start = '🚀',
+        task = '📌',
+        lazy = '💤 ',
+      },
+    },
+  }
+)

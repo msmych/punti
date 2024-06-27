@@ -14,14 +14,14 @@ return {
           return vim.fn.executable 'make' == 1
         end,
       },
-      { 'nvim-tree/nvim-web-devicons',               enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
       { 'nvim-telescope/telescope-file-browser.nvim' },
       { 'nvim-telescope/telescope-ui-select.nvim' },
       { 'nvim-telescope/telescope-dap.nvim' },
     },
     config = function()
-      local telescope = require('telescope')
-      local themes = require('telescope.themes')
+      local telescope = require 'telescope'
+      local themes = require 'telescope.themes'
       telescope.setup {
         extensions = {
           file_browser = {
@@ -41,7 +41,7 @@ return {
       pcall(telescope.load_extension, 'file_browser')
       pcall(telescope.load_extension, 'dap')
 
-      local builtin = require('telescope.builtin')
+      local builtin = require 'telescope.builtin'
 
       vim.keymap.set('n', '<F13>', builtin.help_tags, { desc = 'Search help' })
       vim.keymap.set('n', '<leader><Tab>', builtin.buffers, { desc = 'Search buffers' })
@@ -55,7 +55,7 @@ return {
       vim.keymap.set('n', '<leader>^', builtin.diagnostics, { desc = 'Search errors' })
       vim.keymap.set('n', '<leader>9', builtin.git_commits, { desc = 'Search Git commits' })
 
-      local utils = require('matvey.utils')
+      local utils = require 'matvey.utils'
 
       vim.keymap.set('n', '<leader>o', function()
         if utils.find_git_root() ~= nil then
@@ -76,7 +76,7 @@ return {
       vim.keymap.set('n', '<leader>e', builtin.oldfiles, { desc = 'Search old files' })
       vim.keymap.set('n', '<leader>f', function()
         builtin.grep_string {
-          search = vim.fn.input('Search: '),
+          search = vim.fn.input 'Search: ',
           prompt_title = 'Search by grep',
         }
       end, { desc = 'Search by grep' })
@@ -95,6 +95,6 @@ return {
 
       local dap = telescope.extensions.dap
       vim.keymap.set('n', '<leader>@', dap.list_breakpoints, { desc = 'Search breakpoints' })
-    end
-  }
+    end,
+  },
 }
