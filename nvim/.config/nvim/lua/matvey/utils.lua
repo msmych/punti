@@ -20,10 +20,12 @@ M.find_git_root = function()
 end
 
 M.setup_lsp = function(client, bufnr)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr, desc = 'LSP: hover documentation' })
   vim.keymap.set('n', '<leader><CR>', vim.lsp.buf.code_action, { buffer = bufnr, desc = 'LSP: code action' })
   vim.keymap.set('n', '<leader><F6>', vim.lsp.buf.rename, { buffer = bufnr, desc = 'LSP: rename' })
   vim.keymap.set('i', '<C-p>', vim.lsp.buf.signature_help, { buffer = bufnr, desc = 'LSP: signature help' })
+  vim.keymap.set('n', '<leader>ih', function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, { buffer = bufnr, desc = 'LSP: toggle inlay hints' })
 
   local telescope = require 'telescope.builtin'
 

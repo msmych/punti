@@ -1,0 +1,7 @@
+[push]
+	default = current
+[pull]
+	rebase = false
+
+[alias]
+  clean-local-branches = "!git branch | grep -v \"master\" | xargs git branch -D"

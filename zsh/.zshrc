@@ -17,3 +17,6 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 set -o vi
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+

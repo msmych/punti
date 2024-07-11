@@ -17,8 +17,6 @@ vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste and keep clipboard valu
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
 
-vim.keymap.set('n', '<F2>', vim.diagnostic.goto_next, { desc = 'Go to next error' })
-vim.keymap.set('n', '<F14>', vim.diagnostic.goto_prev, { desc = 'Go to previous error' })
 vim.keymap.set('n', '<leader><F1>', vim.diagnostic.open_float, { desc = 'Show error message' })
 vim.keymap.set('n', '<leader>6', vim.diagnostic.setloclist, { desc = 'Errors quicklist' })
 

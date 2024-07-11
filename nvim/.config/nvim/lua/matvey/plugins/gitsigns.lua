@@ -28,6 +28,7 @@ return {
         end, { desc = 'Git: jump to next hunk' })
 
         vim.keymap.set('n', '<leader>z', gs.reset_buffer, { buffer = bufnr, desc = 'Git: reset buffer' })
+        vim.keymap.set('n', '<leader>gb', gs.toggle_current_line_blame, { buffer = bufnr, desc = 'Git: toggle blame' })
       end,
     },
   },
