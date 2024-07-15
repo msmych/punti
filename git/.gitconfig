@@ -4,4 +4,5 @@
 	rebase = false
 
 [alias]
+  vlog = "!git log --all --oneline --decorate --graph"
   clean-local-branches = "!git branch | grep -v \"master\" | xargs git branch -D"
