@@ -1,8 +1,9 @@
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Write' })
-vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = 'Quit' })
-vim.keymap.set('n', '<leader>x', ':bd<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', '<leader>q', ':bd<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', '<leader>Q', ':q<CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>x', ':qa<CR>', { desc = 'Quit all' })
 
 vim.keymap.set('n', ']b', ':bn<CR>', { desc = 'Go to next buffer' })
 vim.keymap.set('n', '[b', ':bp<CR>', { desc = 'Go to previous buffer' })
