@@ -18,8 +18,8 @@ fi
 
 set -o vi
 
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
