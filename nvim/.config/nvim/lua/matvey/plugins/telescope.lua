@@ -80,7 +80,9 @@ return {
           prompt_title = 'Search by grep',
         }
       end, { desc = 'Search by grep' })
-      vim.keymap.set('n', '<leader>F', builtin.live_grep, { desc = 'Search by grep' })
+      vim.keymap.set('n', '<leader>F', function()
+        require('matvey.utils').multigrep()
+      end, { desc = 'Multigrep' })
       vim.keymap.set('n', '<leader><space>', function()
         builtin.find_files {
           cwd = utils.find_git_root(),

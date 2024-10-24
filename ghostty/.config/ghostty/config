@@ -1,0 +1,10 @@
+background-opacity = 0.82
+background-blur-radius = 20
+copy-on-select = true
+font-family = "Hack Nerd Font Mono"
+font-size = 14
+font-thicken = true
+macos-titlebar-style = tabs
+theme = rose-pine-moon
+window-height = 999
+window-width = 999

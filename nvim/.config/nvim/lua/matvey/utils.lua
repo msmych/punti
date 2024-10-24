@@ -51,4 +51,39 @@ M.setup_lsp = function(client, bufnr)
   end
 end
 
+M.multigrep = function(opts)
+  opts = opts or {}
+  opts.cwd = opts.cwd or vim.uv.cwd()
+  local pickers = require 'telescope.pickers'
+  local finder = require('telescope.finders').new_async_job {
+    command_generator = function(prompt)
+      if not prompt or prompt == '' then
+        return nil
+      end
+      local parts = vim.split(prompt, '  ')
+      local args = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case' }
+      if parts[1] then
+        table.insert(args, '-e')
+        table.insert(args, parts[1])
+      end
+      if parts[2] then
+        table.insert(args, '-g')
+        table.insert(args, parts[2])
+      end
+      return args
+    end,
+    entry_maker = require('telescope.make_entry').gen_from_vimgrep(opts),
+    cwd = opts.cwd,
+  }
+  pickers
+    .new(opts, {
+      debounce = 100,
+      finder = finder,
+      previewer = require('telescope.config').values.grep_previewer(opts),
+      sorter = require('telescope.sorters').empty(),
+      prompt_title = 'Multigrep',
+    })
+    :find()
+end
+
 return M
