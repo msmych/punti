@@ -34,4 +34,4 @@ vim.keymap.set('n', '<C-b>', '<C-b>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
-vim.keymap.set('n', '<leader>1', vim.cmd.Ex, { desc = 'Open file explorer' })
+vim.keymap.set('n', '<leader>1', ':Oil<CR>', { desc = 'Open file explorer' })

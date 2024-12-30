@@ -19,6 +19,7 @@ return {
         'SignColumn',
         'EndOfBuffer',
 
+        'OilNormal',
         'TelescopeNormal',
         'TelescopeBorder',
         'TelescopePromptNormal',
