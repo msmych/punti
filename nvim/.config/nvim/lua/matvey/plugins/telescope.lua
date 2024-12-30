@@ -15,7 +15,6 @@ return {
         end,
       },
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-      { 'nvim-telescope/telescope-file-browser.nvim' },
       { 'nvim-telescope/telescope-ui-select.nvim' },
       { 'nvim-telescope/telescope-dap.nvim' },
     },
@@ -24,13 +23,6 @@ return {
       local themes = require 'telescope.themes'
       telescope.setup {
         extensions = {
-          file_browser = {
-            hidden = true,
-            theme = 'ivy',
-            path = '%:p:h',
-            select_buffer = true,
-            hijack_netrw = true,
-          },
           ['ui-select'] = {
             themes.get_dropdown(),
           },
@@ -38,7 +30,6 @@ return {
       }
       pcall(telescope.load_extension, 'fzf')
       pcall(telescope.load_extension, 'ui-select')
-      pcall(telescope.load_extension, 'file_browser')
       pcall(telescope.load_extension, 'dap')
 
       local builtin = require 'telescope.builtin'
@@ -91,9 +82,6 @@ return {
       end, { desc = 'Search all files' })
       vim.keymap.set('n', '<leader>*', builtin.grep_string, { desc = 'Search word under cursor' })
       vim.keymap.set('n', '<leader>;', builtin.resume, { desc = 'Resume search' })
-
-      local file_browser = telescope.extensions.file_browser
-      vim.keymap.set('n', '<leader>1', file_browser.file_browser, { desc = 'Open file browser' })
 
       local dap = telescope.extensions.dap
       vim.keymap.set('n', '<leader>@', dap.list_breakpoints, { desc = 'Search breakpoints' })
