@@ -1,0 +1,29 @@
+# Font — Hack Nerd Font Mono prevents Nerd Font icons from being double-width.
+font-family = Hack Nerd Font Mono
+font-size = 14
+font-thicken = true
+font-feature = -calt
+
+# Theme — matches nvim (rose-pine moon variant). Built into Ghostty.
+theme = Rose Pine Moon
+
+# Titlebar — transparent blends tab bar into terminal background.
+macos-titlebar-style = transparent
+
+# Padding — slightly more breathing room than default (2).
+window-padding-x = 4
+window-padding-y = 4
+
+# Hide mouse cursor while typing.
+mouse-hide-while-typing = true
+
+# Option key sends Alt escape sequences (needed for Alt-b/Alt-f word
+# navigation, nvim/tmux alt bindings, etc.).
+macos-option-as-alt = true
+
+# Selection automatically copies to clipboard.
+copy-on-select = true
+
+# Maximize window on launch (clamped to screen size).
+window-height = 999
+window-width = 999
