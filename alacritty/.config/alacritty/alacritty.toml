@@ -14,7 +14,7 @@ option_as_alt = "Both"
 
 [window.padding]
 x = 4
-y = 4
+y = 28
 
 [mouse]
 hide_when_typing = true

@@ -34,7 +34,7 @@ Terminal emulator config (`~/.config/alacritty/alacritty.toml`).
 
 ### zsh
 
-Shell config (`~/.zshrc`). Replaces Oh My Zsh with a lean manual setup.
+Shell config (`~/.zshrc`).
 
 - Hand-rolled prompt with `vcs_info` (bold directory + bold cyan branch, red dirty markers)
 - Native `compinit` completions
@@ -44,3 +44,21 @@ Shell config (`~/.zshrc`). Replaces Oh My Zsh with a lean manual setup.
 - Sources `~/.zshrc.local` for machine-specific config and `~/.secrets` for tokens
 
 Plugins (zsh-autosuggestions, zsh-syntax-highlighting) are auto-cloned to `~/.zsh/plugins/` on first shell startup.
+
+### git
+
+Git config (`~/.gitconfig`). Includes `~/.gitconfig.local` for machine-specific user details.
+
+- `push.default = current`, `fetch.prune = true`
+- Histogram diff algorithm
+- Aliases: `lg` (graph), `ltop` (last 20), `stash-all`, `branches` (by recent), `cleanup` (delete merged)
+
+### tmux
+
+Multiplexer config (`~/.tmux.conf`).
+
+- Prefix: `Ctrl+A` (`Ctrl+A, a` to send real Ctrl+A)
+- Mouse enabled, true color, extended keys for Ctrl+Shift combos
+- `|` / `-` for splits, vim-style pane navigation (`h/j/k/l`) and resize (`H/J/K/L`)
+- 1-indexed windows/panes, 50k scrollback, zero escape delay
+- New windows/splits open in current directory

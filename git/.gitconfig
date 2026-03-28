@@ -1,0 +1,14 @@
+[include]
+	path = ~/.gitconfig.local
+[push]
+	default = current
+[fetch]
+	prune = true
+[diff]
+	algorithm = histogram
+[alias]
+	lg = log --oneline --graph --all
+	ltop = log --oneline -20
+	stash-all = stash --include-untracked
+	branches = branch --sort=-committerdate
+	cleanup = !git branch --merged | grep -v -E '(main|master)' | xargs git branch -d
