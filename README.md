@@ -31,3 +31,16 @@ Terminal emulator config (`~/.config/alacritty/alacritty.toml`).
 - Transparent titlebar, maximized window, padding 4
 - Copy-on-select, hide mouse while typing, Option as Alt
 - `TERM=xterm-256color`, scrollback disabled (delegated to tmux)
+
+### zsh
+
+Shell config (`~/.zshrc`). Replaces Oh My Zsh with a lean manual setup.
+
+- Hand-rolled prompt with `vcs_info` (bold directory + bold cyan branch, red dirty markers)
+- Native `compinit` completions
+- `AUTO_CD`, colored `ls`, `..`/`...` aliases
+- Gradle wrapper auto-detection
+- SDKMAN
+- Sources `~/.zshrc.local` for machine-specific config and `~/.secrets` for tokens
+
+Plugins (zsh-autosuggestions, zsh-syntax-highlighting) are auto-cloned to `~/.zsh/plugins/` on first shell startup.
