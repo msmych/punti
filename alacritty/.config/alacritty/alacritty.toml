@@ -24,3 +24,32 @@ save_to_clipboard = true
 
 [scrolling]
 history = 0
+
+# Rose Pine Moon
+[colors.primary]
+background = "#232136"
+foreground = "#e0def4"
+
+[colors.cursor]
+text = "#232136"
+cursor = "#e0def4"
+
+[colors.normal]
+black = "#393552"
+red = "#eb6f92"
+green = "#95b1ac"
+yellow = "#f6c177"
+blue = "#3e8fb0"
+magenta = "#c4a7e7"
+cyan = "#9ccfd8"
+white = "#e0def4"
+
+[colors.bright]
+black = "#6e6a86"
+red = "#eb6f92"
+green = "#95b1ac"
+yellow = "#f6c177"
+blue = "#3e8fb0"
+magenta = "#c4a7e7"
+cyan = "#9ccfd8"
+white = "#e0def4"

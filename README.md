@@ -27,7 +27,7 @@ Terminal emulator config (`~/.config/ghostty/config`).
 Terminal emulator config (`~/.config/alacritty/alacritty.toml`).
 
 - Hack Nerd Font Mono 14pt
-- Default color scheme
+- Rose Pine Moon color scheme
 - Transparent titlebar, maximized window, padding 4
 - Copy-on-select, hide mouse while typing, Option as Alt
 - `TERM=xterm-256color`, scrollback disabled (delegated to tmux)
@@ -59,10 +59,12 @@ Multiplexer config (`~/.tmux.conf`).
 
 - Prefix: `Ctrl+Space`
 - Mouse enabled, true color, extended keys for Ctrl+Shift combos
+- Vi keys in copy mode (`/` to search, `n`/`N` for next/prev)
 - `|` / `-` for splits, vim-style pane navigation (`h/j/k/l`) and resize (`H/J/K/L`)
 - 1-indexed windows/panes, 50k scrollback, zero escape delay
 - New windows/splits open in current directory
 - Top status bar: transparent bg, session name + git branch left, windows right, minimal styling
+- Copy-mode indicator: scroll position + search results (no time)
 - Subtle pane borders, activity monitoring for background windows
 
 ### nvim
@@ -73,4 +75,7 @@ Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
 - Centered scrolling, visual move lines, persistent indent in visual mode
 - Smart search (case-insensitive unless uppercase), persistent undo
 - No swap/backup files, split right/below
-- Plugins managed with native Neovim packages (work in progress)
+- Highlight on yank, diagnostics with rounded borders, no virtual text
+- LSP hover and signature help with rounded borders
+- Rose Pine Moon colorscheme (transparency, dim inactive windows)
+- Plugins managed with lazy.nvim
