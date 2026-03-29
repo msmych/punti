@@ -64,3 +64,13 @@ Multiplexer config (`~/.tmux.conf`).
 - New windows/splits open in current directory
 - Top status bar: transparent bg, session name + git branch left, windows right, minimal styling
 - Subtle pane borders, activity monitoring for background windows
+
+### nvim
+
+Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
+
+- Space leader, relative line numbers, 2-space indent, system clipboard
+- Centered scrolling, visual move lines, persistent indent in visual mode
+- Smart search (case-insensitive unless uppercase), persistent undo
+- No swap/backup files, split right/below
+- Plugins managed with native Neovim packages (work in progress)
