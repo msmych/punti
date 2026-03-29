@@ -11,10 +11,11 @@ family = "Hack Nerd Font Mono"
 decorations = "Transparent"
 startup_mode = "Maximized"
 option_as_alt = "Both"
+dynamic_padding = true
 
 [window.padding]
 x = 4
-y = 28
+y = 4
 
 [mouse]
 hide_when_typing = true
@@ -37,19 +38,19 @@ cursor = "#e0def4"
 [colors.normal]
 black = "#393552"
 red = "#eb6f92"
-green = "#95b1ac"
+green = "#3e8fb0"
 yellow = "#f6c177"
-blue = "#3e8fb0"
+blue = "#9ccfd8"
 magenta = "#c4a7e7"
-cyan = "#9ccfd8"
+cyan = "#ea9a97"
 white = "#e0def4"
 
 [colors.bright]
 black = "#6e6a86"
 red = "#eb6f92"
-green = "#95b1ac"
+green = "#3e8fb0"
 yellow = "#f6c177"
-blue = "#3e8fb0"
+blue = "#9ccfd8"
 magenta = "#c4a7e7"
-cyan = "#9ccfd8"
+cyan = "#ea9a97"
 white = "#e0def4"
