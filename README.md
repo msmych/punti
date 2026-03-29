@@ -57,8 +57,10 @@ Git config (`~/.gitconfig`). Includes `~/.gitconfig.local` for machine-specific 
 
 Multiplexer config (`~/.tmux.conf`).
 
-- Prefix: `Ctrl+A` (`Ctrl+A, a` to send real Ctrl+A)
+- Prefix: `Ctrl+Space`
 - Mouse enabled, true color, extended keys for Ctrl+Shift combos
 - `|` / `-` for splits, vim-style pane navigation (`h/j/k/l`) and resize (`H/J/K/L`)
 - 1-indexed windows/panes, 50k scrollback, zero escape delay
 - New windows/splits open in current directory
+- Top status bar: transparent bg, session name + git branch left, windows right, minimal styling
+- Subtle pane borders, activity monitoring for background windows
