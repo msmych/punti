@@ -28,3 +28,10 @@ vim.keymap.set("v", ">", ">gv")
 
 -- Exit terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+-- Quickfix
+vim.keymap.set("n", "]q", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "]q", "<cmd>cprev<CR>zz")
+
+-- File explorer
+vim.keymap.set("n", "<leader>1", "<cmd>Ex<CR>")

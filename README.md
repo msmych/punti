@@ -40,6 +40,7 @@ Shell config (`~/.zshrc`).
 - Native `compinit` completions
 - `AUTO_CD`, colored `ls`, `..`/`...` aliases
 - Gradle wrapper auto-detection
+- fzf integration: `Ctrl+R` (history), `Ctrl+T` (files), `Alt+C` (cd) with fd backend and Rose Pine Moon theme
 - SDKMAN
 - Sources `~/.zshrc.local` for machine-specific config and `~/.secrets` for tokens
 
@@ -63,7 +64,7 @@ Multiplexer config (`~/.tmux.conf`).
 - `|` / `-` for splits, vim-style pane navigation (`h/j/k/l`) and resize (`H/J/K/L`)
 - 1-indexed windows/panes, 50k scrollback, zero escape delay
 - New windows/splits open in current directory
-- Top status bar: transparent bg, session name + git branch left, windows right, minimal styling
+- Top status bar: transparent bg, session name left, windows right, minimal styling
 - Copy-mode indicator: scroll position + search results (no time)
 - Subtle pane borders, activity monitoring for background windows
 
@@ -78,4 +79,6 @@ Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
 - Highlight on yank, diagnostics with rounded borders, no virtual text
 - LSP hover and signature help with rounded borders
 - Rose Pine Moon colorscheme (transparency, dim inactive windows)
+- Quickfix navigation: `]q`/`[q` next/prev, `<leader>q` open
 - Plugins managed with lazy.nvim
+- fzf-lua: fuzzy finder backed by fzf — files (`<leader>o`, git-aware with fallback), live grep (`<leader>f`), buffers (`<leader><Tab>`), resume (`<leader>;`), marks, git log, and more

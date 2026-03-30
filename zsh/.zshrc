@@ -63,3 +63,20 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Machine-specific config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# fzf
+eval "$(fzf --zsh)"
+
+# Use fd instead of find
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+
+# Rose Pine Moon theme
+export FZF_DEFAULT_OPTS='
+  --color=fg:#e0def4,bg:#232136,hl:#3e8fb0
+  --color=fg+:#e0def4,bg+:#393552,hl+:#9ccfd8
+  --color=pointer:#c4a7e7,info:#9ccfd8,spinner:#c4a7e7
+  --color=header:#3e8fb0,prompt:#ea9a97,marker:#c4a7e7
+  --color=border:#44415a
+'
