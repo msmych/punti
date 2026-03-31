@@ -82,3 +82,5 @@ Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
 - Quickfix navigation: `]q`/`[q` next/prev, `<leader>q` open
 - Plugins managed with lazy.nvim
 - fzf-lua: fuzzy finder backed by fzf — files (`<leader>o`, git-aware with fallback), live grep (`<leader>f`), buffers (`<leader><Tab>`), resume (`<leader>;`), marks, git log, and more
+- oil.nvim: file explorer as a buffer (`<leader>1`) — create/rename/delete files by editing text
+- Treesitter: syntax highlighting and indentation (lua, vim, vimdoc, query)

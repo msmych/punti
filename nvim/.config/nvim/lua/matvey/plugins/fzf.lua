@@ -14,8 +14,12 @@ return {
     {
       "<leader>o",
       function()
-        local ok = pcall(require("fzf-lua").git_files)
-        if not ok then require("fzf-lua").files() end
+        local fzf = require("fzf-lua")
+        if vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null"):find("true") then
+          fzf.git_files()
+        else
+          fzf.files()
+        end
       end,
       desc = "Find files",
     },
