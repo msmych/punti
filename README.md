@@ -6,9 +6,9 @@ Dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/). Each top-l
 
 ```sh
 cd punti
-stow <package>        # symlink a package into ~
-stow --restow <package>  # re-symlink (useful after changes)
-stow -D <package>     # unlink a package
+stow <package>          # symlink a package into ~
+stow --restow <package> # re-symlink (useful after changes)
+stow -D <package>       # unlink a package
 ```
 
 ## Packages
@@ -42,7 +42,7 @@ Shell config (`~/.zshrc`).
 - Gradle wrapper auto-detection
 - fzf integration: `Ctrl+R` (history), `Ctrl+T` (files), `Alt+C` (cd) with fd backend and Rose Pine Moon theme
 - SDKMAN
-- Sources `~/.zshrc.local` for machine-specific config and `~/.secrets` for tokens
+- Sources `~/.zshrc.local` for machine-specific config
 
 Plugins (zsh-autosuggestions, zsh-syntax-highlighting) are auto-cloned to `~/.zsh/plugins/` on first shell startup.
 
@@ -79,8 +79,8 @@ Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
 - Highlight on yank, diagnostics with rounded borders, no virtual text
 - LSP hover and signature help with rounded borders
 - Rose Pine Moon colorscheme (transparency, dim inactive windows)
-- Quickfix navigation: `]q`/`[q` next/prev, `<leader>q` open
+- Quickfix navigation: `]q`/`[q` next/prev
 - Plugins managed with lazy.nvim
 - fzf-lua: fuzzy finder backed by fzf — files (`<leader>o`, git-aware with fallback), live grep (`<leader>f`), buffers (`<leader><Tab>`), resume (`<leader>;`), marks, git log, and more
 - oil.nvim: file explorer as a buffer (`<leader>1`) — create/rename/delete files by editing text
-- Treesitter: syntax highlighting and indentation (lua, vim, vimdoc, query)
+- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter/tree/main): syntax highlighting (bash, java, json, kotlin, lua, markdown, query, vim, vimdoc, yaml)
