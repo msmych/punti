@@ -84,5 +84,6 @@ Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
 - fzf-lua: fuzzy finder backed by fzf — files (`<leader>o`, git-aware with fallback), live grep (`<leader>f`), buffers (`<leader><Tab>`), resume (`<leader>;`), marks, git log (`<leader>9`), and more
 - oil.nvim: file explorer as a buffer (`<leader>1`) — create/rename/delete files by editing text
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter/tree/main): syntax highlighting (bash, java, json, kotlin, lua, markdown, query, vim, vimdoc, yaml)
+- [treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects): structural select (`vaf`/`vif` function, `vac`/`vic` class, `vaa`/`via` parameter), move (`]m`/`[m` method, `]]`/`[[` class), repeatable with `;`/`,`
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim): git gutter signs, hunk navigation (`]c`/`[c`), stage (`<leader>ha`), reset (`<leader>hz`), undo stage (`<leader>hu`), preview (`<leader>hp`)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive): git porcelain — status (`<leader>0`), diff splits (`:Gvdiffsplit`), three-way merge (`:Gvdiffsplit!`), blame, log
