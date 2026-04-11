@@ -29,6 +29,7 @@ vim.opt.showmode = true
 vim.opt.showcmd = true
 vim.opt.mouse = "a"
 vim.opt.inccommand = "split"
+vim.o.winborder = "rounded"
 
 -- Splits
 vim.opt.splitright = true
@@ -45,3 +46,9 @@ vim.opt.timeoutlen = 1000
 
 -- Clipboard
 vim.opt.clipboard = "unnamedplus"
+
+-- LSP
+vim.lsp.enable("lua_ls")
+
+-- Completion
+vim.opt.completeopt = { "menu", "menuone", "noinsert" }

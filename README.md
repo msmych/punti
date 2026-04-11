@@ -2,6 +2,10 @@
 
 Dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/). Each top-level directory is a stow package that mirrors the target file structure under `$HOME`.
 
+## Prerequisites
+
+See `brew.sh`
+
 ## Usage
 
 ```sh
@@ -52,7 +56,8 @@ Git config (`~/.gitconfig`). Includes `~/.gitconfig.local` for machine-specific 
 
 - `push.default = current`, `fetch.prune = true`
 - Histogram diff algorithm
-- Aliases: `lg` (graph), `ltop` (last 20), `stash-all`, `branches` (by recent), `cleanup` (delete merged)
+- Aliases: `lg` (graph), `ltop` (last 20), `stash-all`, `branches` (by recent), `cleanup` (delete merged), `cleanup-force` (delete all non-main)
+- Default editor: nvim
 
 ### tmux
 
@@ -62,11 +67,13 @@ Multiplexer config (`~/.tmux.conf`).
 - Mouse enabled, true color, extended keys for Ctrl+Shift combos
 - Vi keys in copy mode (`/` to search, `n`/`N` for next/prev)
 - `|` / `-` for splits, vim-style pane navigation (`h/j/k/l`) and resize (`H/J/K/L`)
-- 1-indexed windows/panes, 50k scrollback, zero escape delay
+- 1-indexed windows/panes, renumber on close, 50k scrollback, zero escape delay
 - New windows/splits open in current directory
+- Clipboard integration: yank and mouse drag copy to system clipboard via `pbcopy`
 - Top status bar: transparent bg, session name left, windows right, minimal styling
 - Copy-mode indicator: scroll position + search results (no time)
 - Subtle pane borders, activity monitoring for background windows
+- Reload config: `prefix + r`
 
 ### nvim
 
@@ -77,13 +84,18 @@ Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
 - Smart search (case-insensitive unless uppercase), persistent undo
 - No swap/backup files, split right/below
 - Highlight on yank, diagnostics with rounded borders, no virtual text
-- LSP hover and signature help with rounded borders
+- Rounded borders on all floating windows (`winborder`)
 - Rose Pine Moon colorscheme (transparency, dim inactive windows)
 - Quickfix navigation: `]q`/`[q` next/prev
 - Plugins managed with lazy.nvim
-- fzf-lua: fuzzy finder backed by fzf — files (`<leader>o`, git-aware with fallback), live grep (`<leader>f`), buffers (`<leader><Tab>`), resume (`<leader>;`), marks, git log (`<leader>9`), and more
+- fzf-lua: fuzzy finder backed by fzf — actions (`<leader>a`), files (`<leader>o`, git-aware with fallback), all files (`<leader>O`), recent files (`<leader>e`), live grep (`<leader>f`), buffer grep (`<leader>/`), buffers (`<leader><Tab>`), resume (`<leader>;`), marks (`<leader>2`), help tags (`<leader><F1>` in non-LSP buffers), git log (`<leader>9`), and more
 - oil.nvim: file explorer as a buffer (`<leader>1`) — create/rename/delete files by editing text
-- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter/tree/main): syntax highlighting (bash, java, json, kotlin, lua, markdown, query, vim, vimdoc, yaml)
+- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter/tree/main): syntax highlighting (auto-start on open; typical parsers: bash, java, json, kotlin, lua, markdown, query, vim, vimdoc, yaml)
 - [treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects): structural select (`vaf`/`vif` function, `vac`/`vic` class, `vaa`/`via` parameter), move (`]m`/`[m` method, `]]`/`[[` class), repeatable with `;`/`,`
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim): git gutter signs, hunk navigation (`]c`/`[c`), stage (`<leader>ha`), reset (`<leader>hz`), undo stage (`<leader>hu`), preview (`<leader>hp`)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive): git porcelain — status (`<leader>0`), diff splits (`:Gvdiffsplit`), three-way merge (`:Gvdiffsplit!`), blame, log
+- **LSP**: native nvim 0.12 setup (no lspconfig plugin) — `vim.lsp.config()` + `vim.lsp.enable()`, server configs in `lsp/` directory
+  - lua_ls: Lua/LuaJIT language server (installed via brew)
+  - Keymaps (buffer-local on attach): `gd` definition, `gr` references (fzf-lua), `<F18>` rename, `<leader><CR>` code action, `<leader><F1>` diagnostic float (overrides fzf-lua help tags in LSP buffers), `<C-p>` signature help
+  - Document highlight: symbol under cursor highlighted on `CursorHold`, clears on move
+  - Built-in completion: `vim.lsp.completion` with autotrigger, `<C-y>` accept, `<C-n>`/`<C-p>` navigate

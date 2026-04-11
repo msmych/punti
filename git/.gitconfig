@@ -12,3 +12,6 @@
 	stash-all = stash --include-untracked
 	branches = branch --sort=-committerdate
 	cleanup = !git branch --merged | grep -v -E '(main|master)' | xargs git branch -d
+	cleanup-force = !git branch | grep -v -E '(main|master)' | xargs git branch -D
+[core]
+	editor = nvim

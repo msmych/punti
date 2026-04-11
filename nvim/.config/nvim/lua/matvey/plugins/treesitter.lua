@@ -36,7 +36,6 @@ return {
 
     -- Move
     local move = require("nvim-treesitter-textobjects.move")
-    local ts_repeat = require("nvim-treesitter-textobjects.repeatable_move")
 
     local moves = {
       { "]m", "goto_next_start", "@function.outer" },
