@@ -87,9 +87,9 @@ Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
 - Rounded borders on all floating windows (`winborder`)
 - Rose Pine Moon colorscheme (transparency, dim inactive windows)
 - Quickfix navigation: `]q`/`[q` next/prev
-- Plugins managed with lazy.nvim
-- fzf-lua: fuzzy finder backed by fzf — actions (`<leader>a`), files (`<leader>o`, git-aware with fallback), all files (`<leader>O`), recent files (`<leader>e`), live grep (`<leader>f`), buffer grep (`<leader>/`), buffers (`<leader><Tab>`), resume (`<leader>;`), marks (`<leader>2`), help tags (`<leader><F1>` in non-LSP buffers), git log (`<leader>9`), and more
-- oil.nvim: file explorer as a buffer (`<leader>1`) — create/rename/delete files by editing text
+- Plugins managed with [lazy.nvim](https://github.com/folke/lazy.nvim)
+- [fzf-lua](https://github.com/ibhagwan/fzf-lua): fuzzy finder backed by fzf — actions (`<leader>a`), files (`<leader>o`, git-aware with fallback), all files (`<leader>O`), recent files (`<leader>e`), live grep (`<leader>f`), buffer grep (`<leader>/`), buffers (`<leader><Tab>`), resume (`<leader>;`), marks (`<leader>2`), help tags (`<leader><F1>` in non-LSP buffers), git log (`<leader>9`), and more
+- [oil.nvim](https://github.com/stevearc/oil.nvim): file explorer as a buffer (`<leader>1`) — create/rename/delete files by editing text
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter/tree/main): syntax highlighting (auto-start on open; typical parsers: bash, java, json, kotlin, lua, markdown, query, vim, vimdoc, yaml)
 - [treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects): structural select (`vaf`/`vif` function, `vac`/`vic` class, `vaa`/`via` parameter), move (`]m`/`[m` method, `]]`/`[[` class), repeatable with `;`/`,`
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim): git gutter signs, hunk navigation (`]c`/`[c`), stage (`<leader>ha`), reset (`<leader>hz`), undo stage (`<leader>hu`), preview (`<leader>hp`)
@@ -99,3 +99,13 @@ Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
   - Keymaps (buffer-local on attach): `gd` definition, `gr` references (fzf-lua), `<F18>` rename, `<leader><CR>` code action, `<leader><F1>` diagnostic float (overrides fzf-lua help tags in LSP buffers), `<C-p>` signature help
   - Document highlight: symbol under cursor highlighted on `CursorHold`, clears on move
   - Built-in completion: `vim.lsp.completion` with autotrigger, `<C-y>` accept, `<C-n>`/`<C-p>` navigate
+
+### ideavim
+
+IdeaVim config (`~/.ideavimrc`). Mirrors the core nvim editing experience in IntelliJ.
+
+- Space leader, relative line numbers, system clipboard
+- Centered scrolling, visual move lines, persistent indent in visual mode
+- Smart search (case-insensitive unless uppercase), no highlight persistence
+- Paste without overwriting register (`<leader>p`)
+- Emulated plugins: highlightedyank (flash on yank), ideajoin (smart line joining), matchit (extended `%` matching)

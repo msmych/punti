@@ -1,0 +1,43 @@
+" Leader
+let mapleader=" "
+nmap <Space> <Nop>
+vmap <Space> <Nop>
+
+" Options
+set number
+set relativenumber
+set scrolloff=8
+set incsearch
+set nohlsearch
+set ignorecase
+set smartcase
+set clipboard=unnamedplus
+set visualbell
+set noerrorbells
+
+" Plugins
+set highlightedyank
+set ideajoin
+set matchit
+
+" Escape
+imap <C-c> <Esc>
+
+" Centered scrolling
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
+nmap <C-f> <C-f>zz
+nmap <C-b> <C-b>zz
+nmap n nzzzv
+nmap N Nzzzv
+
+" Move selections
+vmap J :m '>+1<CR>gv=gv
+vmap K :m '<-2<CR>gv=gv
+
+" Paste without overwriting register
+xmap <leader>p "_dP
+
+" Indent and stay in visual
+vmap < <gv
+vmap > >gv
