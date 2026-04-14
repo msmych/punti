@@ -1,0 +1,28 @@
+{
+  "profiles": [
+    {
+      "complex_modifications": {
+        "rules": [
+          {
+            "manipulators": [
+              {
+                "description": "Caps Lock → Meh (Cmd+Ctrl+Option)",
+                "from": { "key_code": "caps_lock" },
+                "to": [
+                  {
+                    "key_code": "left_control",
+                    "modifiers": ["left_command", "left_option"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          }
+        ]
+      },
+      "name": "Matvey",
+      "selected": true,
+      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+    }
+  ]
+}

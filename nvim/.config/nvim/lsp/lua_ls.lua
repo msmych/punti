@@ -4,7 +4,6 @@ return {
   root_markers = { ".luarc.json", ".luarc.jsonc", "stylua.toml", ".stylua.toml" },
   settings = {
     Lua = {
-      runtime = { version = "LuaJIT" },
       workspace = {
         checkThirdParty = false,
         library = { vim.env.VIMRUNTIME },

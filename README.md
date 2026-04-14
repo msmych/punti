@@ -4,7 +4,8 @@ Dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/). Each top-l
 
 ## Prerequisites
 
-See `brew.sh`
+* [Homebrew](https://brew.sh/)
+* See `brew.sh` script
 
 ## Usage
 
@@ -17,7 +18,7 @@ stow -D <package>       # unlink a package
 
 ## Packages
 
-### ghostty
+### [ghostty](https://ghostty.org/)
 
 Terminal emulator config (`~/.config/ghostty/config`).
 
@@ -26,7 +27,7 @@ Terminal emulator config (`~/.config/ghostty/config`).
 - Transparent titlebar, maximized window, padding 4
 - Copy-on-select, hide mouse while typing, Option as Alt
 
-### alacritty
+### [alacritty](https://alacritty.org/)
 
 Terminal emulator config (`~/.config/alacritty/alacritty.toml`).
 
@@ -75,6 +76,26 @@ Multiplexer config (`~/.tmux.conf`).
 - Subtle pane borders, activity monitoring for background windows
 - Reload config: `prefix + r`
 
+### [karabiner](https://karabiner-elements.pqrs.org/)
+
+Keyboard remapper config (`~/.config/karabiner/karabiner.json`).
+
+- Caps Lock → Meh key (Cmd+Ctrl+Option) for use with Hammerspoon shortcuts
+- Note: Karabiner may rewrite/reformat this file when changed via its UI
+
+### [hammerspoon](https://www.hammerspoon.org/)
+
+macOS automation config (`~/.hammerspoon/init.lua`).
+
+- Meh = Ctrl+Alt+Cmd (via Karabiner), Hyper = Shift+Meh
+- Instant window moves (no animation)
+- Window management: maximize (`Hyper+Return`), first third (`Meh+[`), last two thirds (`Meh+]`), move to next monitor (`Meh+Right`)
+- App launcher: Ghostty (`Meh+G`), IntelliJ (`Meh+I`), Chrome (`Meh+C`)
+- Reload config: `Meh+H`
+- EmmyLua.spoon for `hs.*` LSP completions (`.luarc.json` points lua_ls at generated annotations)
+- Sources `~/.hammerspoon/init.local.lua` for machine-specific config
+
+
 ### nvim
 
 Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
@@ -95,7 +116,7 @@ Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim): git gutter signs, hunk navigation (`]c`/`[c`), stage (`<leader>ha`), reset (`<leader>hz`), undo stage (`<leader>hu`), preview (`<leader>hp`)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive): git porcelain — status (`<leader>0`), diff splits (`:Gvdiffsplit`), three-way merge (`:Gvdiffsplit!`), blame, log
 - **LSP**: native nvim 0.12 setup (no lspconfig plugin) — `vim.lsp.config()` + `vim.lsp.enable()`, server configs in `lsp/` directory
-  - lua_ls: Lua/LuaJIT language server (installed via brew)
+  - [lua_ls](https://github.com/LuaLS/lua-language-server): Lua/LuaJIT language server (installed via brew); per-project `.luarc.json` for workspace-specific settings (e.g. Hammerspoon annotations)
   - Keymaps (buffer-local on attach): `gd` definition, `gr` references (fzf-lua), `<F18>` rename, `<leader><CR>` code action, `<leader><F1>` diagnostic float (overrides fzf-lua help tags in LSP buffers), `<C-p>` signature help
   - Document highlight: symbol under cursor highlighted on `CursorHold`, clears on move
   - Built-in completion: `vim.lsp.completion` with autotrigger, `<C-y>` accept, `<C-n>`/`<C-p>` navigate
