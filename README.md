@@ -81,6 +81,7 @@ Multiplexer config (`~/.tmux.conf`).
 Keyboard remapper config (`~/.config/karabiner/karabiner.json`).
 
 - Caps Lock → Meh key (Cmd+Ctrl+Option) for use with Hammerspoon shortcuts
+- Shift+Caps Lock → Shift+Meh (prevents accidental Caps Lock toggle)
 - Note: Karabiner may rewrite/reformat this file when changed via its UI
 
 ### [hammerspoon](https://www.hammerspoon.org/)
@@ -94,7 +95,6 @@ macOS automation config (`~/.hammerspoon/init.lua`).
 - Reload config: `Meh+H`
 - EmmyLua.spoon for `hs.*` LSP completions (`.luarc.json` points lua_ls at generated annotations)
 - Sources `~/.hammerspoon/init.local.lua` for machine-specific config
-
 
 ### nvim
 
@@ -120,6 +120,18 @@ Neovim config (`~/.config/nvim/`). Modular Lua setup under `lua/matvey/`.
   - Keymaps (buffer-local on attach): `gd` definition, `gr` references (fzf-lua), `<F18>` rename, `<leader><CR>` code action, `<leader><F1>` diagnostic float (overrides fzf-lua help tags in LSP buffers), `<C-p>` signature help
   - Document highlight: symbol under cursor highlighted on `CursorHold`, clears on move
   - Built-in completion: `vim.lsp.completion` with autotrigger, `<C-y>` accept, `<C-n>`/`<C-p>` navigate
+
+### vim
+
+Backup Vim config (`~/.vimrc`). Lightweight fallback for machines without Neovim — no plugins, pure vimscript.
+
+- Mirrors nvim core: space leader, relative line numbers, 2-space indent, system clipboard
+- Syntax highlighting, filetype detection, recursive file finding (`path+=**`)
+- Centered scrolling, visual move lines, persistent indent in visual mode
+- Smart search, persistent undo, no swap/backup
+- Plugin emulations using built-ins: file explorer (`<leader>1` → netrw), find file (`<leader>o` → `:find`), grep (`<leader>f` → `:grep`), buffers (`<leader><Tab>` → `:ls`/`:b`), marks (`<leader>2`), search buffer (`<leader>/`)
+- Quickfix navigation: `]q`/`[q`
+- netrw: no banner, tree style
 
 ### ideavim
 
