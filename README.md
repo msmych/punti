@@ -5,12 +5,13 @@ Dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/). Each top-l
 ## Prerequisites
 
 * [Homebrew](https://brew.sh/)
-* See `brew.sh` script
+* `brew bundle` (uses this repo's `Brewfile`)
 
 ## Usage
 
 ```sh
 cd punti
+brew bundle --file Brewfile
 stow <package>          # symlink a package into ~
 stow --restow <package> # re-symlink (useful after changes)
 stow -D <package>       # unlink a package
@@ -91,8 +92,8 @@ macOS automation config (`~/.hammerspoon/init.lua`).
 - Meh = Ctrl+Alt+Cmd (via Karabiner), Hyper = Shift+Meh
 - Instant window moves (no animation)
 - Window management: maximize (`Hyper+Return`), first third (`Meh+[`), last two thirds (`Meh+]`), move to next monitor (`Meh+Right`)
-- App launcher: Ghostty (`Meh+G`), IntelliJ (`Meh+I`), Chrome (`Meh+C`)
-- Reload config: `Meh+H`
+- App launcher: Settings (`,`), Finder (`f`), Notes (`n`), Calendar (`k`), Reminders (`j`), Brave (`b`), IntelliJ (`i`) — all on `Meh+<key>`
+- Reload config: `Hyper+H`
 - EmmyLua.spoon for `hs.*` LSP completions (`.luarc.json` points lua_ls at generated annotations)
 - Sources `~/.hammerspoon/init.local.lua` for machine-specific config
 

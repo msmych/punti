@@ -65,7 +65,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # fzf
-eval "$(fzf --zsh)"
+if [[ -o interactive ]]; then eval "$(fzf --zsh)"; fi
 
 # Use fd instead of find
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'

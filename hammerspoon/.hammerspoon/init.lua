@@ -4,22 +4,38 @@ local meh = {"ctrl", "alt", "cmd"}
 local hyper = {"shift", "ctrl", "alt", "cmd"}
 
 -- Quick reload
-hs.hotkey.bind(meh, "h", function()
+hs.hotkey.bind(hyper, "h", function()
   hs.reload()
 end)
 hs.alert.show("Hammerspoon loaded")
 
 -- App launcher
-hs.hotkey.bind(meh, "g", function()
-  hs.application.launchOrFocus("Ghostty")
+hs.hotkey.bind(meh, ",", function()
+  hs.application.launchOrFocus("Settings")
+end)
+
+hs.hotkey.bind(meh, "f", function()
+  hs.application.launchOrFocus("Finder")
+end)
+
+hs.hotkey.bind(meh, "n", function()
+  hs.application.launchOrFocus("Notes")
+end)
+
+hs.hotkey.bind(meh, "k", function()
+  hs.application.launchOrFocus("Calendar")
+end)
+
+hs.hotkey.bind(meh, "j", function()
+  hs.application.launchOrFocus("Reminders")
+end)
+
+hs.hotkey.bind(meh, "b", function()
+  hs.application.launchOrFocus("Brave Browser")
 end)
 
 hs.hotkey.bind(meh, "i", function()
   hs.application.launchOrFocus("IntelliJ IDEA")
-end)
-
-hs.hotkey.bind(meh, "c", function()
-  hs.application.launchOrFocus("Google Chrome")
 end)
 
 -- Window management

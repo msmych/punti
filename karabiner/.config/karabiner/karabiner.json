@@ -1,42 +1,42 @@
 {
-  "profiles": [
-    {
-      "complex_modifications": {
-        "rules": [
-          {
-            "manipulators": [
-              {
-                "description": "Shift+Caps Lock → Shift+Meh (prevent real Caps Lock)",
-                "from": {
-                  "key_code": "caps_lock",
-                  "modifiers": { "mandatory": ["shift"] }
-                },
-                "to": [
-                  {
-                    "key_code": "left_control",
-                    "modifiers": ["left_command", "left_option", "left_shift"]
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "description": "Caps Lock → Meh (Cmd+Ctrl+Option)",
-                "from": { "key_code": "caps_lock" },
-                "to": [
-                  {
-                    "key_code": "left_control",
-                    "modifiers": ["left_command", "left_option"]
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          }
-        ]
-      },
-      "name": "Matvey",
-      "selected": true,
-      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
-    }
-  ]
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "manipulators": [
+                            {
+                                "description": "Shift+Caps Lock → Shift+Meh (prevent real Caps Lock)",
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "mandatory": ["shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "modifiers": ["left_command", "left_option", "left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Caps Lock → Meh (Cmd+Ctrl+Option)",
+                                "from": { "key_code": "caps_lock" },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "modifiers": ["left_command", "left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": "Matvey",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
 }
