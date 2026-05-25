@@ -83,6 +83,3 @@ export FZF_DEFAULT_OPTS='
   --color=header:#3e8fb0,prompt:#ea9a97,marker:#c4a7e7
   --color=border:#44415a
 '
-
-# Revpress standalone CLI
-export PATH="/Users/m.smychkov/.revpress/bin:$PATH"
