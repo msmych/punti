@@ -1,3 +1,6 @@
+# Flow control
+stty -ixon
+
 # Completions
 autoload -Uz compinit && compinit
 
@@ -47,16 +50,6 @@ gradle-or-gradlew() {
 }
 alias gradle=gradle-or-gradlew
 
-# Plugins
-ZSH_PLUGINS=~/.zsh/plugins
-if [[ ! -d "$ZSH_PLUGINS/zsh-autosuggestions" ]]; then
-  mkdir -p "$ZSH_PLUGINS"
-  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "$ZSH_PLUGINS/zsh-autosuggestions"
-  git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_PLUGINS/zsh-syntax-highlighting"
-fi
-source "$ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -72,6 +65,16 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 
+# Plugins
+ZSH_PLUGINS=~/.zsh/plugins
+if [[ ! -d "$ZSH_PLUGINS/zsh-autosuggestions" ]]; then
+  mkdir -p "$ZSH_PLUGINS"
+  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "$ZSH_PLUGINS/zsh-autosuggestions"
+  git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_PLUGINS/zsh-syntax-highlighting"
+fi
+source "$ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
 # Rose Pine Moon theme
 export FZF_DEFAULT_OPTS='
   --color=fg:#e0def4,bg:#232136,hl:#3e8fb0
@@ -80,3 +83,6 @@ export FZF_DEFAULT_OPTS='
   --color=header:#3e8fb0,prompt:#ea9a97,marker:#c4a7e7
   --color=border:#44415a
 '
+
+# Revpress standalone CLI
+export PATH="/Users/m.smychkov/.revpress/bin:$PATH"

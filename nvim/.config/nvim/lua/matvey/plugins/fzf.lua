@@ -1,14 +1,27 @@
 return {
   "ibhagwan/fzf-lua",
   dependencies = { "echasnovski/mini.icons" },
-  opts = {
-    "default-title",
-    winopts = {
-      height = 0.85,
-      width = 0.80,
-      preview = { layout = "vertical" },
-    },
-  },
+  opts = function()
+    return {
+      "default-title",
+      winopts = {
+        height = 0.85,
+        width = 0.80,
+        preview = { layout = "vertical" },
+      },
+      keymap = {
+        fzf = {
+          ["ctrl-q"] = "select-all+accept",
+        },
+      },
+      actions = {
+        files = {
+          true,
+          ["ctrl-q"] = require("fzf-lua").actions.file_all_to_qf,
+        },
+      },
+    }
+  end,
   keys = {
     { "<leader>a", "<cmd>FzfLua builtin<CR>", desc = "Find actions" },
     {
