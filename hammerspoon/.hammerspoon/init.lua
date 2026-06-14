@@ -31,7 +31,15 @@ hs.hotkey.bind(meh, "j", function()
 end)
 
 hs.hotkey.bind(meh, "b", function()
+  hs.application.launchOrFocus("Helium")
+end)
+
+hs.hotkey.bind(hyper, "b", function()
   hs.application.launchOrFocus("Brave Browser")
+end)
+
+hs.hotkey.bind(meh, "t", function()
+  hs.application.launchOrFocus("Alacritty")
 end)
 
 hs.hotkey.bind(meh, "i", function()
