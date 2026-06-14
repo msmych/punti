@@ -66,7 +66,7 @@ hs.hotkey.bind(meh, "]", function()
   end)
 end)
 
-hs.hotkey.bind(meh, "right", function()
+hs.hotkey.bind(hyper, "right", function()
   local win = hs.window.focusedWindow()
   if not win then return end
   win:moveToScreen(win:screen():next())
